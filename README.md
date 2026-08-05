@@ -1,118 +1,58 @@
-# Orcamento
-Aplicativo de finanças
-# Verkupp Pessoal - Sistema de Gestão Financeira
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
 
-Este é um aplicativo de painel financeiro de página única (SPA) projetado para ajudar os usuários a rastrear suas receitas e despesas. O aplicativo possui uma interface de usuário moderna e reativa, visualização de dados e insights financeiros gerados por IA. Os dados são persistidos localmente no navegador do usuário, e há funcionalidades para importar e exportar dados.
+# Gastos-Pessoais — Verkupp Pessoal (Gestão Financeira)
+
+> Sistema de gestão financeira pessoal (SPA) com dashboard, gráficos e insights gerados por **IA (Google Gemini)**.
+
+## 📌 Sobre o Projeto
+
+Painel financeiro de página única para acompanhar receitas e despesas, com interface moderna, visualização de dados e análises financeiras inteligentes. Os dados são persistidos no navegador e há suporte a importação e exportação.
 
 ## ✨ Funcionalidades
 
-- **Dashboard Principal**: Exibe cartões de resumo com receita total, despesa total e lucro líquido.
-- **Visualização de Dados**: Um gráfico de pizza (`Recharts`) mostra a distribuição de transações por categoria.
-- **Tabela de Transações**: Apresenta uma lista detalhada de todas as transações, com a capacidade de excluí-las.
-- **Adicionar Transação**: Um formulário dedicado para adicionar novas receitas ou despesas.
-- **Filtros Dinâmicos**: Filtre transações por tipo (receita/despesa), categoria ou mês.
-- **Insights com IA**: Utiliza a API do Google Gemini (`@google/genai`) para fornecer análises e conselhos financeiros com base nos dados do usuário.
-- **Persistência de Dados**: As transações são salvas automaticamente no `LocalStorage` do navegador, garantindo que os dados não sejam perdidos ao recarregar a página.
-- **Importar/Exportar**:
-  - Exporte um relatório das transações filtradas para um arquivo **Excel (.xlsx)**.
-  - Crie e restaure backups de todos os dados de transação em formato **JSON**.
+- 📊 **Dashboard principal**: resumo de receitas, despesas e lucro líquido
+- 🥧 **Gráfico por categoria** com Recharts
+- 📋 **Tabela de transações** com opção de exclusão
+- ➕ **Formulário** para adicionar receitas e despesas
+- 🔍 **Filtros** por tipo, categoria e mês
+- 🤖 **Insights com IA** (Google Gemini) com análise dos dados financeiros
+- 💾 **Persistência** automática no LocalStorage
+- 📤 **Exportação** para Excel (.xlsx) e **backups** em JSON
 
-## 🛠️ Tecnologias e Bibliotecas
-
-- **Framework**: React `19` com TypeScript
-- **Build Tool**: Vite
-- **Estilização**: Utilitários de CSS (ex: Tailwind CSS) para um design moderno e responsivo.
-- **Gráficos**: `Recharts` para visualização de dados interativa.
-- **Ícones**: `lucide-react` para ícones SVG leves e consistentes.
-- **IA Generativa**: `@google/genai` para integração com a API do Google Gemini.
-- **Utilitários**: `xlsx` para gerar arquivos Excel.
-
-## 📂 Estrutura do Código
-
-O código-fonte está organizado da seguinte forma para promover modularidade e manutenibilidade.
-
-```
-/
-├── components/           # Componentes React reutilizáveis da UI
-│   ├── AiInsights.tsx
-│   ├── DashboardCards.tsx
-│   ├── Filters.tsx
-│   ├── FinanceChart.tsx
-│   ├── TransactionForm.tsx
-│   └── TransactionTable.tsx
-│
-├── services/             # Módulos para interagir com APIs externas
-│   └── geminiService.ts
-│
-├── App.tsx               # Componente principal que gerencia o estado e a lógica do aplicativo
-├── index.tsx             # Ponto de entrada do React
-├── types.ts              # Definições de tipos TypeScript (Transaction, FinancialStats, etc.)
-└── package.json          # Dependências do projeto e scripts
-```
-
-### Descrição dos Componentes
-
-- **`App.tsx`**: O coração do aplicativo. Ele gerencia o estado global das `transactions`, lida com adição, exclusão e filtragem, e compõe a interface do usuário renderizando os outros componentes.
-- **`components/DashboardCards.tsx`**: Exibe as principais métricas financeiras (receita, despesa, lucro).
-- **`components/FinanceChart.tsx`**: Renderiza o gráfico de pizza com base nas transações filtradas.
-- **`components/TransactionTable.tsx`**: Mostra os dados das transações em formato de tabela e inclui a funcionalidade de exclusão.
-- **`components/TransactionForm.tsx`**: Contém o formulário para inserir novas transações.
-- **`components/Filters.tsx`**: Fornece os controles de UI para filtrar os dados exibidos.
-- **`components/AiInsights.tsx`**: Interage com o `geminiService` para buscar e exibir insights financeiros.
-- **`services/geminiService.ts`**: Encapsula a lógica para fazer chamadas à API do Google Gemini, enviando os dados financeiros e recebendo análises.
-- **`types.ts`**: Centraliza as definições de tipos para garantir a consistência dos dados em todo o aplicativo.
-
-## 🚀 Como Executar o Projeto
-
-### Pré-requisitos
-
-- Node.js (versão 18.x ou superior)
-- `npm` ou `yarn`
-
-### Instalação
-
-1.  Clone o repositório:
-    ```bash
-    git clone <URL_DO_REPOSITORIO>
-    cd <NOME_DA_PASTA>
-    ```
-
-2.  Instale as dependências:
-    ```bash
-    npm install
-    ```
-
-### Configuração da API
-
-Para que os insights de IA funcionem, você precisa de uma chave de API do Google Gemini.
-
-1.  Crie um arquivo `.env.local` na raiz do projeto.
-2.  Adicione sua chave de API a este arquivo:
-    ```
-    VITE_GEMINI_API_KEY=SUA_CHAVE_DE_API_AQUI
-    ```
-
-### Executando o Aplicativo
-
-Para iniciar o servidor de desenvolvimento:
+## 🚀 Como Executar
 
 ```bash
+# instalar dependências
+npm install
+
+# ambiente de desenvolvimento
 npm run dev
-```
 
-O aplicativo estará disponível em `http://localhost:5173` (ou em outra porta, se a 5173 estiver em uso).
-
-### Build de Produção
-
-Para criar uma versão otimizada do aplicativo para produção:
-
-```bash
+# build de produção
 npm run build
 ```
 
-Os arquivos estáticos serão gerados no diretório `dist/`. Você pode visualizar a build de produção localmente com:
+> Para usar os insights de IA, configure sua chave da API do Google Gemini em `services/geminiService.ts`.
 
-```bash
-npm run preview
+## 📁 Estrutura do Projeto
+
+```
+├── App.tsx                    → Componente principal
+├── components/
+│   ├── AiInsights.tsx         → Insights com IA
+│   ├── DashboardCards.tsx     → Cards de resumo
+│   ├── Filters.tsx            → Filtros de transações
+│   ├── FinanceChart.tsx       → Gráfico de categorias
+│   ├── TransactionForm.tsx    → Formulário de transações
+│   └── TransactionTable.tsx   → Tabela de transações
+├── services/geminiService.ts  → Integração com Google Gemini
+├── types.ts                   → Tipos TypeScript
+└── vite.config.ts             → Configuração do Vite
 ```
 
+## 📄 Licença
+
+Projeto desenvolvido para fins de portfólio.
